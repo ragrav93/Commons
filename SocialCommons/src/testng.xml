@@ -3,6 +3,7 @@
   <test name="Test">
     <classes>
       <class name="testNG.WorkdayTestng"/>
+      <class name="testNG.AskHubNewTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
