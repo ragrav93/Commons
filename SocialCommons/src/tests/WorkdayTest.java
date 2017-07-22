@@ -14,7 +14,7 @@ import work_day_page_objects.WorkdayPage;
 public class WorkdayTest {
 	
 	public static void navigate_to_workday(WebDriver driver) throws InterruptedException{
-		CommonsDashboard.top_destination(driver).click();
+	CommonsDashboard.top_destination(driver).click();
         CommonsDashboard.workday_link(driver).click();
         ArrayList tabs = new ArrayList (driver.getWindowHandles());
         driver.switchTo().window((String) tabs.get(1));
