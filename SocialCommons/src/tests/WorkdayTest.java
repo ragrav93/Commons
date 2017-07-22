@@ -7,15 +7,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import work_day_page_objects.CommonsPage;
+import work_day_page_objects.CommonsDashboard;
 import work_day_page_objects.TimeoffPage;
 import work_day_page_objects.WorkdayPage;
 
 public class WorkdayTest {
 	
 	public static void navigate_to_workday(WebDriver driver) throws InterruptedException{
-		CommonsPage.destinations_link(driver).click();
-        CommonsPage.workday_link(driver).click();
+		CommonsDashboard.top_destination(driver).click();
+        CommonsDashboard.workday_link(driver).click();
         ArrayList tabs = new ArrayList (driver.getWindowHandles());
         driver.switchTo().window((String) tabs.get(1));
 		Thread.sleep(20000);
