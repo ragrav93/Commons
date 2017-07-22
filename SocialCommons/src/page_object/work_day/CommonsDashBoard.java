@@ -35,5 +35,13 @@ public class CommonsDashBoard {
 	    return element;
 	 
 	    }
+	
+	public static WebElement workday_link(WebDriver driver){
+
+        element = driver.findElement(By.linkText("Workday (PTO, Performance, Feedback)"));
+
+        return element;
+
+        }
 
 }
