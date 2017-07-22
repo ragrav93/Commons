@@ -1,4 +1,4 @@
-package page_object;
+package ask_hub;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
