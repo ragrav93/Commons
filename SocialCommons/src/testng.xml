@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="TestPackage.NewTest"/>
+      <class name="test_suite.WorkdayTestng"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
