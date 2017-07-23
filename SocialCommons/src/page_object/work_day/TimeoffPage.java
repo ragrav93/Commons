@@ -1,14 +1,15 @@
 package work_day_page_objects;
 import org.openqa.selenium.*;
+import page_object.PageObjectBase;
 public class TimeoffPage {
 	
-private static WebElement element = null;
-	
-	public static WebElement timeoff_button(WebDriver driver){
+	public static PageObjectBase timeoff_button(WebDriver driver){
+		
+		PageObjectBase page_base = new PageObjectBase(); 
 		 
-        element = driver.findElement(By.id("2997$275"));
+        	page_base.element = driver.findElement(By.id("2997$275"));
 
-        return element;
+        	return page_base;
 
         }
 
