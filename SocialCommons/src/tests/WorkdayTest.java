@@ -19,16 +19,13 @@ public class WorkdayTest {
         CommonsDashboard.workday_link(driver).click(5);
         ArrayList tabs = new ArrayList (driver.getWindowHandles());
         driver.switchTo().window((String) tabs.get(1));
-		Thread.sleep(20000);
 	}
 	
 	public static void navigate_to_timeoff_request(WebDriver driver) throws InterruptedException{
 		WebElement item_ul = WorkdayPage.workday_ul(driver);
 		  List<WebElement> workday_items = item_ul.findElements(By.tagName("li"));
 		  workday_items.get(3).click();
-		  Thread.sleep(10000);
 		  TimeoffPage.timeoff_button(driver).click();
-		  Thread.sleep(10000);
 	}
 	
 	public static String get_number_of_leaves(WebDriver driver, String leave_type) throws InterruptedException{
