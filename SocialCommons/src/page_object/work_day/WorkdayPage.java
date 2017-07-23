@@ -6,7 +6,7 @@ private static WebElement element = null;
 	
 	public static WebElement workday_ul(WebDriver driver){
 		 
-        element = driver.findElement(By.className("WMPG"));
+        element = driver.findElement(By.className("WBSG"));
 
         return element;
 
