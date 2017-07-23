@@ -1,14 +1,31 @@
 package work_day_page_objects;
 import org.openqa.selenium.*;
+import page_object.PageObjectBase;
 public class TimeoffRequestPage {
-	private static WebElement element = null;
-	
-	public static WebElement apply_button(WebDriver driver){
+	public static PageObjectBase casual_leave(WebDriver driver){
+		PageObjectBase page_base = new PageObjectBase();
 		 
-        element = driver.findElement(By.xpath("//*[@id='workdayApplicationFrame']/div[1]/div[2]/section/div[2]/div[1]/div[1]/button[1]/span[2]"));
+		page_base.element = driver.findElement(By.id("56$263237--uid22"));
 
-        return element;
+        return page_base;
 
         }
+	
+	public static PageObjectBase privileged_leave(WebDriver driver){
+		PageObjectBase page_base = new PageObjectBase();
+		 
+		page_base.element = driver.findElement(By.id("56$263237--uid19"));
+		
+        return page_base;
 
+        }
+	
+	public static PageObjectBase sick_leave(WebDriver driver){
+		PageObjectBase page_base = new PageObjectBase();
+		 
+		page_base.element = driver.findElement(By.id("56$263237--uid16"));
+		
+		return page_base;
+
+        }
 }
