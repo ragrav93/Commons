@@ -1,41 +1,46 @@
-package test_suite;
+package testNG;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import tooling.EnvironmentCheck;
-
-import work_day_page_objects.TimeoffRequestPage;
-//import Excel.ReadExcel;
+import org.testng.annotations.DataProvider;
+import tooling.ReadExcel;
 
 import work_day_tests.WorkdayTest;
 
-public class WorkdayTestng {
+public class CommonsTest {
        public WebDriver driver;
+      
        
+       
+  @DataProvider(name = "Leaves")
+       
+  public static String[] links() {
+	  ReadExcel read = new ReadExcel();
+	  String[] input = new String[3];
+	  for (int i = 0; i < input.length ;  i++) {
+	      input[i] = read.readXLSXFile("C:/Book1.xlsx","Sheet1","Name", i+2);
+	      input[i] = input[i].trim();
+	   }
+	  return input;
+  }
   
-  @Test
-  public void test_workday() throws InterruptedException {
+  
+  @Test(dataProvider = "Leaves")
+  public void test_workday(String leave) throws InterruptedException {
+	  
 	  WorkdayTest.navigate_to_timeoff_request(driver);
-	  //ReadExcel read = new ReadExcel();
-	  //String solution = read.readXLSXFile("C:/Book1.xlsx","Sheet1","Name",2);
-	  String pattern = "(\\d+)(.*)";
-	  Pattern regex = Pattern.compile(pattern);
-	  String button_text = TimeoffRequestPage.apply_button(driver).getText();
-	  Matcher match_pattern = regex.matcher(button_text);
-	  boolean result;
-	  if (match_pattern.find( )) {		  
-		   result = match_pattern.group(1).equals("1");
-	  }else{
-		  result = false; 
-	  }
-	  Assert.assertTrue(result, "Test Case for matching the text and number of leaves");
+	  
+	  String[] leave_type = leave.split(",");
+	  
+	  String leave_count = WorkdayTest.get_number_of_leaves(driver, leave_type[0]);
+	  
+	  Assert.assertEquals(leave_count, leave_type[1]);
+	  
   }
   
   @BeforeMethod
