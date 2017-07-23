@@ -3,44 +3,53 @@ package page_object;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import page_object.PageObjectBase;
 
 public class CommonsDashBoard {
-	private static WebElement element = null;
 	
-	public static WebElement top_destination(WebDriver driver){
+	
+	public static PageObjectBase top_destination(WebDriver driver){
+	    PageObjectBase page_base = new PageObjectBase();
 		 
-	    element = driver.findElement(By.linkText("Top Destinations"));
+	    page_base.element = driver.findElement(By.linkText("Top Destinations"));
 	 
-	    return element;
-	 
-	    }
-	public static WebElement top_destination_more(WebDriver driver){
-		 
-	    element = driver.findElement(By.linkText("More..."));
-	 
-	    return element;
-	 
-	    }
-	public static WebElement commons_home_page(WebDriver driver){
-		 
-	    element = driver.findElement(By.id("logo"));
-	 
-	    return element;
-	 
-	    }
-	public static WebElement ask_hub(WebDriver driver){
-		 
-	    element = driver.findElement(By.linkText("askHub"));
-	 
-	    return element;
+	    return page_base;
 	 
 	    }
 	
-	public static WebElement workday_link(WebDriver driver){
+	public static PageObjectBase top_destination_more(WebDriver driver){
+	    PageObjectBase page_base = new PageObjectBase();
+		 
+	    page_base.element = driver.findElement(By.linkText("More..."));
+	 
+	    return page_base;
+	 
+	    }
+	
+	public static PageObjectBase commons_home_page(WebDriver driver){
+	    PageObjectBase page_base = new PageObjectBase();
+		 
+	    page_base.element = driver.findElement(By.id("logo"));
+	 
+	    return page_base;
+	 
+	    }
+	
+	public static PageObjectBase ask_hub(WebDriver driver){
+	    PageObjectBase page_base = new PageObjectBase();
+		 
+	    page_base.element = driver.findElement(By.linkText("askHub"));
+	 
+	    return page_base;
+	 
+	    }
+	
+	public static PageObjectBase workday_link(WebDriver driver){
+	    PageObjectBase page_base = new PageObjectBase();
 
-        element = driver.findElement(By.linkText("Workday (PTO, Performance, Feedback)"));
+            page_base.element = driver.findElement(By.linkText("Workday (PTO, Performance, Feedback)"));
 
-        return element;
+            return page_base;
 
         }
 
